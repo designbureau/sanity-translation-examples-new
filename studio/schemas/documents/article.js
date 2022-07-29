@@ -15,59 +15,14 @@ export default {
   // will be used for previews with the value of the
   // base language.
   preview: {
-    select: {
-      title: 'title',
-      media: 'image'
-    }
+    // select: {
+    //   title: 'title',
+    // }
   },
   fields: [
     {
       type: 'string',
       name: 'title',
-    },
-    {
-      title: 'Slug',
-      name: 'slug',
-      type: 'slug',
-      options: {
-        // How you could manually specify a translated field, should you have
-        // to.
-        source: `title.${baseLanguage.name}`
-      },
-      localize: false
-    },
-    {
-      type: 'openGraph',
-      name: 'openGraph'
-    },
-    {
-      type: 'image',
-      name: 'image',
-      options: {
-        hotspot: true
-      }
-    },
-    {
-      type: 'richText',
-      name: 'body'
-    },
-    {
-      type: 'reference',
-      name: 'author',
-      to: [{ type: 'author' }]
-    },
-    {
-      type: 'array',
-      name: 'authors',
-      // We probably don't want localized versions of this reference array, so
-      // we opt out of localizing this specific field
-      localize: false,
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'author' }]
-        }
-      ]
     }
   ]
 }
